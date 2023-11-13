@@ -16,9 +16,14 @@ int32_t main (int arc, char *argv[]){
    std::string ip= getIPAddress(iface);
    std::string ipb= getIfBroadcastAddr(iface);
 
-   std::cout<<iface.c_str() <<" "<<ip.c_str()<<" "<<ipb.c_str()<<std::endl;
+   //std::cout<<iface.c_str() <<" "<<ip.c_str()<<" "<<ipb.c_str()<<std::endl;
+    std::string messageString ="abcd";
 
-   std::vector<char> message= {'a','b','c','d'};
+    std::vector<char> message;
+    
+    std::copy(messageString.begin(), messageString.end(), std::back_inserter(message));
+    
+    
     int32_t port=5000;
    
    int32_t client=8; 

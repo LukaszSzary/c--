@@ -28,11 +28,13 @@ void* Core2::run(){
             rLength= recvfrom(client,rBuffer,2000,0,(struct sockaddr *)&resp,&slen);
             i++;
             if(rLength>0){
+                rBuffer[rLength]='\0';
                 cout<<rBuffer<<endl;
             }
             //std::cout<<"ddd";
             usleep(20);
         
     }
+    delete[] rBuffer;
     return nullptr;
 }
